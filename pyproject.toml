@@ -1,0 +1,49 @@
+[project]
+name = "mcp-matrix-knowledge"
+version = "0.1.0"
+description = "Trinity-style downloadable AI knowledge modules"
+authors = [{name = "Jordan Ehrig", email = "jordan@ehrig.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+
+dependencies = [
+    "asyncio",
+    "aiohttp",
+    "mcp",
+    "python-dotenv",
+    "pydantic>=2.0",
+    "ipfshttpclient",
+    "web3",
+    "neo4j",
+    "numpy",
+    "faiss-cpu",
+    "supabase",
+    "cryptography"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "black",
+    "ruff",
+    "mypy"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
